@@ -1,9 +1,15 @@
 import "./App.css";
 import { RadioGroup, RadioOption } from "./Radio";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function App() {
   const [selected, setSelected] = useState("");
+
+  const handleSubmit = (e) => {
+    setSelected("")
+  }
+
+ 
   return (
     <div className="App">
       <h2>How did you hear about Little Lemon?</h2>
@@ -13,7 +19,7 @@ function App() {
         <RadioOption value="advertising">Advertising</RadioOption>
         <RadioOption value="other">Other</RadioOption>
       </RadioGroup>
-      <button disabled={!selected}>Submit</button>
+      <button disabled={!selected} onClick={handleSubmit}>Submit</button>
     </div>
   );
 }
